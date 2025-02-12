@@ -46,4 +46,15 @@ func main() {
 	courses = append(courses[:index], courses[index+1:]...)
 	fmt.Println("After removing :",courses)
 
+	// delete element from slice based on value
+	var cities = []string{"New York", "London", "Chicago", "Delhi", "Mumbai"}
+	fmt.Println("Before deleting :",cities)
+	deleteIndex := 2
+	for i, city := range cities {
+		if i == deleteIndex {
+			cities = append(cities[:i], cities[i+1:]...)
+			break
+		}
+	}
+	fmt.Println("After deleting :",cities)
 }
