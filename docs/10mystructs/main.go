@@ -17,5 +17,5 @@ type User struct { //struct name should be in capital
 	Name string
 	Email string
 	Status bool
-	Age int
+	Age int //only first letter capital will be exported
 }
