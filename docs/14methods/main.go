@@ -29,12 +29,12 @@ func (u User) GetStatus() bool {
 	return u.Status
 }
 
-func (u User) NewMail() {
+func (u User) NewMail() { //pass by value
 	u.Email = "test@go.dev"
 	fmt.Println("Email of this user is: ", u.Email)
 }
 
-func (u *User) NewMail2() {
+func (u *User) NewMail2() { //pass by reference
 	u.Email = "test@go.dev"
 	fmt.Println("Email of this user is: ", u.Email)
 }
