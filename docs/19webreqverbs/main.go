@@ -30,3 +30,20 @@ func PerformGetRequest() {
 	fmt.Println("byte count",byteCount)
 	fmt.Println("response body",responseString.String())
 }
+
+func PerformPostRequest() {
+	const myurl = "https://localhost:8080/post"
+
+	// fake json payload
+	requestBody := strings.NewReader(`{
+		"key1": "value1",
+		"key2": "value2"
+	}`)
+	response, error := http.Post(myurl, "application/json", requestBody)
+	if error != nil {
+		panic(error)
+	}
+	defer response.Body.Close()
+	content, _ := io.ReadAll(response.Body)
+	fmt.Println(string(content))
+}
