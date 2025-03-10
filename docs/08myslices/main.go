@@ -5,6 +5,19 @@ import (
 	"sort"
 )
 
+func diff() {
+	//diff between array and slice
+	// Array Syntax
+	var arr [3]int // Declares an array of size 3 with default values (0 for int)
+	arr1 := [3]int{1, 2, 3} // Array with explicit values
+	arr2 := [...]int{1, 2, 3} // Compiler determines the size (3 in this case)
+	
+	// Slice Syntax
+	var slice []int // Declares a slice (size not specified)
+	slice1 := []int{1, 2, 3} // Slice with values
+	slice2 := make([]int, 3) // Creates a slice of size 3 with default values
+}
+
 func main() {
 	fmt.Println("slices demo")
 	var fruitsList = []string{"Apple", "Banana", "Grapes", "Orange", "Pineapple"}
@@ -15,8 +28,8 @@ func main() {
 	fmt.Printf("Type of fruitsList: %T\n", fruitsList)
 	
 	// [start_index_inclusive:end_index_exclusive]
-	fruitsList = append(fruitsList[1:]) 
-	fruitsList = append(fruitsList[1:3]) 
+	fruitsList = append(fruitsList[1:],"Kiwi") 
+	fruitsList = append(fruitsList[1:3],"Kiwi") 
 	fmt.Println(fruitsList)
 	fmt.Printf("Type of fruitsList: %T\n", fruitsList)
 	
