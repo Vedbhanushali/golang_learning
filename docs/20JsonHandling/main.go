@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 )
-
 type course struct { //private not exporting it
 	Name     string `json:"course_name"` //tagging
 	Price    int   	//no tagging
